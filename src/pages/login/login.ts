@@ -16,18 +16,22 @@ export class LoginPage {
     public app: App
   ) { }
 
-  login() {
+  login():void {
     const loading = this.loadingCtrl.create({
       duration: 500
     });
 
     loading.onDidDismiss(() => {
       const alert = this.alertCtrl.create({
-        title: 'Logged in!',
-        subTitle: 'Thanks for logging in.',
-        buttons: ['Dismiss']
+        title: 'Invalide',
+        subTitle: 'Veuillez rentrer un Pseudo et un mot de passe valide',
+        buttons: ['OK']
       });
       alert.present();
+
+      // if (this.user.isValid()) {
+      //   this.nav.setRoot(AllEventPage);
+      // }
     });
 
     loading.present();
