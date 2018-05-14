@@ -1,3 +1,16 @@
+$orange: #ff8c28;
+$green: #89ff28;
+$blue: #288fff;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
@@ -35,7 +48,7 @@ $app-direction: ltr;
 
 $colors: (
   primary:    #488aff,
-  secondary:  #32db64,
+  secondary:  #89ff28,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222

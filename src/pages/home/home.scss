@@ -1,3 +1,32 @@
 page-home {
+  .content-home {
+    background-image: url("../../assets/imgs/background-login.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: transparent;
+    margin: 0 auto;
+    text-align: center;
 
+    .logo {
+      width: 65%;
+      margin: 20px auto 15px auto;
+      height: auto;
+    }
+
+    .card-home {
+      padding: 20px;
+      text-align: left;
+
+      .p-home {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .div-button {
+      text-align: right;
+
+    }
+  }
 }
