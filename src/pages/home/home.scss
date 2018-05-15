@@ -1,32 +1,69 @@
 page-home {
-  .content-home {
-    background-image: url("../../assets/imgs/background-login.jpg");
+  ion-content {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-color: transparent;
-    margin: 0 auto;
-    text-align: center;
+  }
 
+
+  ion-card {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.9;
+
+    ion-col {
+      text-align: left;
+      font-size: 1.6rem;
+    }
+
+  }
+  .logo-home {
+    text-align: center;
     .logo {
-      width: 65%;
-      margin: 20px auto 15px auto;
+      width: 83%;
       height: auto;
     }
+  }
 
-    .card-home {
-      padding: 20px;
-      text-align: left;
 
-      .p-home {
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
-      }
-    }
+  .transparent-header {
+    background-image: url("../../assets/imgs/background-login.jpg");
+  }
 
-    .div-button {
-      text-align: right;
+  .main-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 600px;
+  }
+  span {
+    color: white;
+  }
 
+  ion-item {
+    // border-radius: 30px !important;
+    padding-left: 10px !important;
+    margin-bottom: 10px;
+    background-color: #f6f6f6;
+    opacity: 0.7;
+    font-size: 0.9em;
+  }
+
+
+
+
+  .div-button {
+    text-align: right;
+
+  }
+
+  @media only screen and (min-width: 768px) {
+    .main-home {
+      margin: 0 auto;
+      max-width: 40%;
     }
   }
+
 }

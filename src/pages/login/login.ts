@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AlertController, App, LoadingController, IonicPage } from 'ionic-angular';
+import {AlertController, App, LoadingController, IonicPage, NavController} from 'ionic-angular';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @IonicPage()
 @Component({
@@ -11,6 +12,7 @@ export class LoginPage {
   public loginForm: any;
 
   constructor(
+    public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public app: App
@@ -29,6 +31,8 @@ export class LoginPage {
       });
       alert.present();
 
+
+
       // if (this.user.isValid()) {
       //   this.nav.setRoot(AllEventPage);
       // }
@@ -36,10 +40,13 @@ export class LoginPage {
 
     loading.present();
 
+    this.navCtrl.setRoot(DashboardPage);
+
   }
 
   goToSignup() {
     // this.navCtrl.push(SignupPage);
+    this.navCtrl.setRoot(DashboardPage);
   }
 
   goToResetPassword() {

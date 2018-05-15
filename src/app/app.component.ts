@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 import {IonicStorageModule, StorageConfig} from "@ionic/storage";
 
 @Component({
@@ -25,7 +26,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Login', component: LoginPage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Dashboard', component: DashboardPage },
     ];
 
     // if (StorageUti.hasAccount()) {
@@ -34,7 +36,7 @@ export class MyApp {
     //   this.rootPage = LoginPage;
     // }
 
-    this.rootPage = HomePage;
+    this.rootPage = DashboardPage;
 
   }
 

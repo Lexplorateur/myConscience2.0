@@ -16,31 +16,54 @@
 
   <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 <!--</ion-content>-->
-<ion-content class="content-home">
-  <img class="logo" src="../../assets/imgs/logo.png" />
-  <ion-card class="card-home">
-    <p class="p-home">
-      Salut,
-    </p>
-    <p class="p-home">
-      c’est ta conscience 2.0 qui te parle.
-    </p>
-    <p class="p-home">
-      Ensemble nous allons réaliser de grande choses. Fini la procrastination et place à l’action !
-    </p>
-    <p class="p-home">
-      Je me suis matérialisée pour simplifier nos échanges.
-      Grâce à cela nous allons pouvoir lister des tâches à effectuer et/ou des objectifs à atteindre.
-    </p>
-    <p class="p-home">
-      Je compte sur toi pour ne pas me faire faux bond.
-      J’ai confiance en nous !
-    </p>
-    <p class="p-home">
-      J’ai hâte, on commence quand ?
-    </p>
-    <div class="div-button">
-      <button class="green" ion-button (click)="handleClickHome()">suivant</button>
-    </div>
-  </ion-card>
+
+<ion-content padding class="transparent-header">
+  <div class="main-home">
+    <ion-row>
+      <ion-col class="logo-home">
+        <img class="logo" src="../../assets/imgs/logo.png" />
+      </ion-col>
+    </ion-row>
+    <ion-card class="card-home">
+      <ion-row>
+        <ion-col>
+          Salut,
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          c’est ta conscience 2.0 qui te parle.
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Ensemble nous allons réaliser de grande choses. Fini la procrastination et place à l’action !
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Je me suis matérialisée pour simplifier nos échanges.
+          Grâce à cela nous allons pouvoir lister des tâches à effectuer et/ou des objectifs à atteindre.
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Je compte sur toi pour ne pas me faire faux bond.
+          J’ai confiance en nous !
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          J’ai hâte, on commence quand ?
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="div-button">
+            <button class="green" ion-button (click)="handleClickHome()">suivant</button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
 </ion-content>

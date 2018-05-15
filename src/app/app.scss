@@ -12,8 +12,21 @@
 // default Sass variables, belong in "theme/variables.scss".
 //
 // To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
+// for the .md, .ios, or .wp mode classes. The mode classes is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+  font-family: LatoRegular;
+  src: url('../assets/fonts/Lato-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: LatoBold;
+  src: url('../assets/fonts/Lato-Bold.ttf') format('ttf');
+}
+
+* {
+  font-family: LatoRegular, Arial, sans-serif;
+}
 
 .nav-bar {
   background-color: $orange;
