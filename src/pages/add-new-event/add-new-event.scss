@@ -10,12 +10,18 @@ page-add-new-event {
   .add-nav * {
     color: $grey;
     font-size: 1.7rem;
+    text-transform: uppercase;
 
     span {
       color: $orange;
       font-weight: bold;
+      font-size: 2rem;
     }
   }
 
+  .card-form-add {
+    margin-top: 60px;
+    border-radius: 5px;
+  }
 
 }

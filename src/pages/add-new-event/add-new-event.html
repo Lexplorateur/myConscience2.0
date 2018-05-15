@@ -16,11 +16,29 @@
   </ion-header>
 
 
-  <div padding class="main-dashboard">
-    <ion-row>
-      <ion-col>
-      </ion-col>
-    </ion-row>
-  </div>
+  <ion-card class="card-form-add">
+    <ion-list radio-group [(ngModel)]="periodChoose">
+      <ion-list-header>
+        Je vais le faire dans :
+      </ion-list-header>
+      <ion-item>
+        <ion-label>La Journée</ion-label>
+        <ion-radio value="day"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Le Mois</ion-label>
+        <ion-radio value="month"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>L'Année</ion-label>
+        <ion-radio value="year"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label color="primary">Date butoire (facultatif)</ion-label>
+      <ion-datetime displayFormat="D MMMM" [(ngModel)]="Datechoose"></ion-datetime>
+    </ion-item>
+
+  </ion-card>
 
 </ion-content>
