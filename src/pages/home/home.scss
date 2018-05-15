@@ -6,12 +6,17 @@ page-home {
     border-color: transparent;
   }
 
+  .transparent-header {
+    background-image: url("../../assets/imgs/background-login.jpg");
+  }
+
 
   ion-card {
     align-items: center;
     text-align: center;
     padding: 20px;
     opacity: 0.9;
+    margin-bottom: 20px;
 
     ion-col {
       text-align: left;
@@ -25,11 +30,6 @@ page-home {
       width: 83%;
       height: auto;
     }
-  }
-
-
-  .transparent-header {
-    background-image: url("../../assets/imgs/background-login.jpg");
   }
 
   .main-home {

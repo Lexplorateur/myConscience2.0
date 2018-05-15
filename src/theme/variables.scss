@@ -1,6 +1,11 @@
 $orange: #ff8c28;
 $green: #89ff28;
 $blue: #288fff;
+$grey: #282828;
+
+$border-left : (
+  sport : 2px solid yellow,
+);
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -51,7 +56,10 @@ $colors: (
   secondary:  #89ff28,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  redM:       #b52020,
+  yellowM:    #b5ab20,
+  greenM:     #4cb520,
 );
 
 

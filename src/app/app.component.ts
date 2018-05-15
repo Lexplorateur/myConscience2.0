@@ -7,7 +7,6 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import {IonicStorageModule, StorageConfig} from "@ionic/storage";
 
 @Component({
   templateUrl: 'app.html'

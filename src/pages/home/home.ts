@@ -9,10 +9,10 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  pushPage: any;
 
-  handleClickHome() {
-    this.navCtrl.push(LoginPage);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.pushPage = LoginPage;
   }
 
 }

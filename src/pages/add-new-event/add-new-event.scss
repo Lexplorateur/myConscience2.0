@@ -1,0 +1,21 @@
+page-add-new-event {
+
+  ion-content {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: transparent;
+  }
+
+  .add-nav * {
+    color: $grey;
+    font-size: 1.7rem;
+
+    span {
+      color: $orange;
+      font-weight: bold;
+    }
+  }
+
+
+}

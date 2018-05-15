@@ -15,24 +15,49 @@
 // for the .md, .ios, or .wp mode classes. The mode classes is
 // automatically applied to the <body> element in the app.
 
-@font-face {
-  font-family: LatoRegular;
-  src: url('../assets/fonts/Lato-Regular.ttf') format('ttf');
-}
-@font-face {
-  font-family: LatoBold;
-  src: url('../assets/fonts/Lato-Bold.ttf') format('ttf');
-}
+/* GENERAL */
 
-* {
-  font-family: LatoRegular, Arial, sans-serif;
-}
+  @font-face {
+    font-family: LatoRegular;
+    src: url('../assets/fonts/Lato-Regular.ttf') format('ttf');
+  }
+  @font-face {
+    font-family: LatoBold;
+    src: url('../assets/fonts/Lato-Bold.ttf') format('ttf');
+  }
 
-.nav-bar {
-  background-color: $orange;
-  color: #ffffff;
-  text-transform: uppercase;
-}
+  * {
+    font-family: LatoRegular, Arial, sans-serif;
+  }
+
+  .scroll-content {
+    overflow: hidden;
+  }
+
+/* END GENERAL */
+
+/* MENU */
+
+  .content-menu {
+    opacity: 0.8;
+
+    .button-menu {
+      border-bottom: 1px solid black;
+    }
+
+    .row-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .col-menu {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+
+/* END MENU */
 
 .transparent-header {
   .toolbar-content,

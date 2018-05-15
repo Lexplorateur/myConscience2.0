@@ -1,6 +1,69 @@
 page-dashboard {
-  .dashboard-nav {
-    display: flex;
-    justify-content: space-between;
+
+  ion-content {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: transparent;
   }
+
+  ion-header {
+    position: fixed;
+
+    .dashboard-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon-menu {
+        background-color: $orange;
+        padding: 5px 7px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+
+      .logo {
+        max-height: 30px;
+      }
+    }
+  }
+
+  .main-dashboard {
+    margin: 60px auto;
+
+    .green {
+      width: 100%;
+      margin-bottom: 20px;
+
+      .add {
+        margin: auto 20px;
+      }
+    }
+  }
+
+  .card-ticket {
+    padding: 10px;
+    border-radius: 5px;
+
+    .row-ticket {
+      color: $grey;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-weight: bold;
+      }
+
+      .point-ticket {
+        display: flex;
+        align-items: center;
+
+        .icon-ticket {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
 }

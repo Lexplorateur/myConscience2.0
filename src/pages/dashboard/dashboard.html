@@ -4,16 +4,44 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header padding class="transparent-header">
-  <ion-navbar class="dashboard-nav">
-    <ion-title><img class="logo" src="../../assets/imgs/logo.png" alt="myConscience2.0"/></ion-title>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-navbar>
-</ion-header>
+
+<ion-content padding class="transparent-header" style="background-image: linear-gradient(rgba(255, 255, 255, 0.2), transparent), url('../../assets/imgs/background-login.jpg')">
+
+  <ion-header>
+    <ion-navbar class="dashboard-nav">
+      <ion-title><img class="logo" src="../../assets/imgs/logo.png" alt="myConscience2.0"/></ion-title>
+      <button ion-button menuToggle end>
+        <ion-icon class="icon-menu" color="light" name="cog"></ion-icon>
+      </button>
+    </ion-navbar>
+  </ion-header>
 
 
-<ion-content padding>
+  <div class="main-dashboard">
+    <ion-row>
+      <ion-col>
+        <button class="green" ion-button (click)="addNewEvent()">
+          <ion-icon class="add" color="light" name="add"></ion-icon>
+          Ajouter un ticket
+          <ion-icon class="add" color="light" name="add"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="card-ticket" style="border-left: 5px solid yellow;">
+      <ion-row class="row-ticket">
+        <h2>TITRE</h2>
+        <div class="point-ticket">
+          <span>3pt</span>
+          <ion-icon class="icon-ticket" color="redM" name="medal"></ion-icon>
+        </div>
+      </ion-row>
+      <ion-row>
+        <ion-col class="description-ticket">
+          Description rapide
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
 
 </ion-content>
