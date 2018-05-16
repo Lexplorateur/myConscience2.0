@@ -20,14 +20,14 @@
 
     <ion-item class="form-title">
       <ion-label stacked>Titre de l'évènement</ion-label>
-      <ion-input [(ngModel)]="title"></ion-input>
+      <ion-input [(ngModel)]="item.title"></ion-input>
     </ion-item>
     <ion-item class="form-description">
       <ion-label stacked>Petit descriptif</ion-label>
-      <ion-textarea [(ngModel)]="description"></ion-textarea>
+      <ion-textarea [(ngModel)]="item.description"></ion-textarea>
     </ion-item>
 
-    <ion-list radio-group [(ngModel)]="periodChoose">
+    <ion-list radio-group [(ngModel)]="item.period">
       <ion-list-header>
         Je vais le faire dans :
       </ion-list-header>
@@ -46,10 +46,10 @@
     </ion-list>
     <ion-item  class="date-choose">
       <ion-label color="primary">Date <span>(Si "La Journée")</span></ion-label>
-      <ion-datetime displayFormat="D MMMM" [(ngModel)]="Datechoose" placeholder="Aujourd'hui"></ion-datetime>
+      <ion-datetime displayFormat="D MMMM" [(ngModel)]="item.date" placeholder="Aujourd'hui"></ion-datetime>
     </ion-item>
 
-    <ion-list class="theme-choose" radio-group [(ngModel)]="themeChoose">
+    <ion-list class="theme-choose" radio-group [(ngModel)]="item.theme">
       <ion-list-header>
         Dans quel thème :
       </ion-list-header>
@@ -87,7 +87,7 @@
       </ion-item>
     </ion-list>
 
-    <ion-list radio-group [(ngModel)]="difficultyChoose">
+    <ion-list radio-group [(ngModel)]="item.difficulty">
       <ion-list-header>
         La difficulté de la tâche :
       </ion-list-header>

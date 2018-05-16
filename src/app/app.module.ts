@@ -14,6 +14,7 @@ import { AddNewEventPage } from '../pages/add-new-event/add-new-event';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {FIREBASE_CONFIG} from "./firebase.credencials";
+import { ItemListProvider } from '../providers/item-list/item-list';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {FIREBASE_CONFIG} from "./firebase.credencials";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ItemListProvider
   ]
 })
 export class AppModule {}

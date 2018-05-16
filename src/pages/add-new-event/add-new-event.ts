@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import { ItemModel } from '../../models/item/item.model';
 import * as $ from 'jquery';
 
 /**
@@ -15,6 +16,15 @@ import * as $ from 'jquery';
   templateUrl: 'add-new-event.html',
 })
 export class AddNewEventPage {
+
+  item: ItemModel = {
+    title: '',
+    description: '',
+    period: '',
+    date: '',
+    theme: '',
+    difficulty: ''
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
