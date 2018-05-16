@@ -1,10 +1,25 @@
 page-add-new-event {
 
+
   ion-content {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-color: transparent;
+  }
+
+  ion-list-header {
+    text-transform: uppercase;
+  }
+
+  ion-list {
+    margin-bottom: 20px !important;
+
+    span {
+      color: $orange;
+      font-weight: bold;
+      font-size: 2rem;
+    }
   }
 
   .add-nav * {
@@ -20,8 +35,62 @@ page-add-new-event {
   }
 
   .card-form-add {
-    margin-top: 60px;
+    margin: 60px auto;
     border-radius: 5px;
+    text-align: center;
+    .date-choose {
+      span {
+        font-size: 1.2rem;
+      }
+    }
+
+    .theme-choose {
+      .sport {
+        border-bottom: 3px solid yellow;
+      }
+      .job {
+        border-bottom: 3px solid blueviolet;
+      }
+      .leisure {
+        border-bottom: 3px solid coral;
+      }
+      .household {
+        border-bottom: 3px solid darkslateblue;
+      }
+      .health {
+        border-bottom: 3px solid limegreen;
+      }
+      .learning {
+        border-bottom: 3px solid palevioletred;
+      }
+      .altruism {
+        border-bottom: 3px solid dodgerblue;
+      }
+      .other {
+        border-bottom: 3px solid grey;
+      }
+    }
+
+    .difficulty {
+      display: flex;
+    }
+
+    .form-title {
+      border-bottom: 1px solid $orange;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .form-description {
+      border-bottom: 1px solid $orange;
+      border-radius: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .green {
+      width: 90%;
+      margin: 30px auto;
+    }
   }
 
 }

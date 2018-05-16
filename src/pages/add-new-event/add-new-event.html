@@ -17,28 +17,97 @@
 
 
   <ion-card class="card-form-add">
+
+    <ion-item class="form-title">
+      <ion-label stacked>Titre de l'évènement</ion-label>
+      <ion-input [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item class="form-description">
+      <ion-label stacked>Petit descriptif</ion-label>
+      <ion-textarea [(ngModel)]="description"></ion-textarea>
+    </ion-item>
+
     <ion-list radio-group [(ngModel)]="periodChoose">
       <ion-list-header>
         Je vais le faire dans :
       </ion-list-header>
       <ion-item>
-        <ion-label>La Journée</ion-label>
-        <ion-radio value="day"></ion-radio>
+        <ion-label>L'<span>A</span>nnée</ion-label>
+        <ion-radio value="year"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>Le Mois</ion-label>
+        <ion-label>Le <span>M</span>ois</ion-label>
         <ion-radio value="month"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>L'Année</ion-label>
-        <ion-radio value="year"></ion-radio>
+        <ion-label>La <span>J</span>ournée</ion-label>
+        <ion-radio value="day"></ion-radio>
       </ion-item>
     </ion-list>
-    <ion-item>
-      <ion-label color="primary">Date butoire (facultatif)</ion-label>
-      <ion-datetime displayFormat="D MMMM" [(ngModel)]="Datechoose"></ion-datetime>
+    <ion-item  class="date-choose">
+      <ion-label color="primary">Date <span>(Si "La Journée")</span></ion-label>
+      <ion-datetime displayFormat="D MMMM" [(ngModel)]="Datechoose" placeholder="Aujourd'hui"></ion-datetime>
     </ion-item>
 
+    <ion-list class="theme-choose" radio-group [(ngModel)]="themeChoose">
+      <ion-list-header>
+        Dans quel thème :
+      </ion-list-header>
+      <ion-item class="sport">
+        <ion-label>Sport</ion-label>
+        <ion-radio value="yellow"></ion-radio>
+      </ion-item>
+      <ion-item class="job">
+        <ion-label>Travail</ion-label>
+        <ion-radio value="blueviolet"></ion-radio>
+      </ion-item>
+      <ion-item class="leisure">
+        <ion-label>Loisir</ion-label>
+        <ion-radio value="coral"></ion-radio>
+      </ion-item>
+      <ion-item class="household">
+        <ion-label>Ménage</ion-label>
+        <ion-radio value="darkslateblue"></ion-radio>
+      </ion-item>
+      <ion-item class="health">
+        <ion-label>Santé</ion-label>
+        <ion-radio value="limegreen"></ion-radio>
+      </ion-item>
+      <ion-item class="learning">
+        <ion-label>Apprentissage</ion-label>
+        <ion-radio value="palevioletred"></ion-radio>
+      </ion-item>
+      <ion-item class="altruism">
+        <ion-label>Bonne action</ion-label>
+        <ion-radio value="dodgerblue"></ion-radio>
+      </ion-item>
+      <ion-item class="other">
+        <ion-label>Autres</ion-label>
+        <ion-radio value="grey"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <ion-list radio-group [(ngModel)]="difficultyChoose">
+      <ion-list-header>
+        La difficulté de la tâche :
+      </ion-list-header>
+      <div class="difficulty">
+        <ion-item>
+          <ion-label><ion-icon color="easy" name="medal"></ion-icon></ion-label>
+          <ion-radio value="easy"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label><ion-icon color="average" name="medal"></ion-icon></ion-label>
+          <ion-radio value="average"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label><ion-icon color="difficult" name="medal"></ion-icon></ion-label>
+          <ion-radio value="difficult"></ion-radio>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <button ion-button class="green">Valider</button>
   </ion-card>
 
 </ion-content>
