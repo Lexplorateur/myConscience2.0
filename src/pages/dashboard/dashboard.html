@@ -5,10 +5,10 @@
   Ionic pages and navigation.
 -->
 
-<ion-content padding class="transparent-header" style="background-image: linear-gradient(rgba(255, 255, 255, 0.2), transparent), url('../../assets/imgs/background-login.jpg')">
+<ion-content padding style="background-image: url('../../assets/imgs/background-login.jpg')">
 
   <ion-header>
-    <ion-navbar class="dashboard-nav">
+    <ion-navbar class="dashboard-nav" color="nav">
       <ion-title><img class="logo" src="../../assets/imgs/logo.png" alt="myConscience2.0"/></ion-title>
       <button ion-button menuToggle end>
         <ion-icon class="icon-menu" color="light" name="cog"></ion-icon>
@@ -20,7 +20,7 @@
   <div class="main-dashboard">
     <ion-row>
       <ion-col>
-        <button class="green" ion-button (click)="addNewEvent()">
+        <button navPush="AddNewEventPage" class="green" ion-button>
           <ion-icon class="add" color="light" name="add"></ion-icon>
           Ajouter un ticket
           <ion-icon class="add" color="light" name="add"></ion-icon>
@@ -28,17 +28,17 @@
       </ion-col>
     </ion-row>
 
-    <ion-card class="card-ticket" style="border-left: 5px solid yellow;">
+    <ion-card class="card-ticket" *ngFor="let item of items | async" [ngStyle]="{'border-left': getColorBorder(item.theme)}">
       <ion-row class="row-ticket">
-        <h2>TITRE</h2>
+        <h2>{{ item.title }}</h2>
         <div class="point-ticket">
           <span>3pt</span>
-          <ion-icon class="icon-ticket" color="difficult" name="medal"></ion-icon>
+          <ion-icon class="icon-ticket" color="{{ item.difficulty }}" name="medal"></ion-icon>
         </div>
       </ion-row>
       <ion-row>
         <ion-col class="description-ticket">
-          Description rapide
+          {{ item.description }}
         </ion-col>
       </ion-row>
     </ion-card>

@@ -49,10 +49,14 @@ page-dashboard {
       color: $grey;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
 
       h2 {
         font-weight: bold;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        hyphens: auto;
+        max-width: 80%;
       }
 
       .point-ticket {
@@ -62,6 +66,10 @@ page-dashboard {
         .icon-ticket {
           margin-left: 5px;
         }
+      }
+
+      .description-ticket {
+        text-transform: capitalize !important;
       }
     }
   }

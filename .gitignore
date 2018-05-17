@@ -30,6 +30,8 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 
+src/app/firebase.credencials.ts
+
 .DS_Store
 Thumbs.dbom kanongil/use-object-assign  …
          images

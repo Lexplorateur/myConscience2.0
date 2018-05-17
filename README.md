@@ -18,6 +18,12 @@ Les ajouts :
   - installation d'une dépendance pour utiliser firebase <br>
   - ne pas oublier les imports dans app.module AngularFireModule & "la constante firebase" & AngularFireDatabaseModule
   
+#### Si au moment de récupérer les données TypeError: Object(...) is not Function
+
+* ##### npm install angularfire2@5.0.0-rc.4 firebase@4.13.1    <br>
+  - Passer aux version précédent d'angularfire2 et de firebase
+  
+  
 * ##### npm install jquery --save
 * ##### npm install -g typings
 * ##### typings install dt~jquery --global --save

@@ -3,18 +3,13 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { LoginPage } from '../pages/login/login';
-import { DashboardPage } from '../pages/dashboard/dashboard';
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any;
+  rootPage: string;
 
   pages: Array<{title: string, component: any}>;
 
@@ -23,10 +18,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Login', component: LoginPage },
-      { title: 'List', component: ListPage },
-      { title: 'Dashboard', component: DashboardPage },
+      { title: 'Accueil', component: 'HomePage' },
+      { title: 'Connexion', component: 'LoginPage' },
+      { title: 'Mes évènements', component: 'DashboardPage' },
+      { title: 'Ajouter un évènement', component: 'DashboardPage' }
     ];
 
     // if (StorageUti.hasAccount()) {
@@ -35,7 +30,7 @@ export class MyApp {
     //   this.rootPage = LoginPage;
     // }
 
-    this.rootPage = DashboardPage;
+    this.rootPage = 'DashboardPage';
 
   }
 
