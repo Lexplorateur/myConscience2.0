@@ -19,7 +19,6 @@ import {EventListProvider} from "../../providers/event-list/event-list";
 export class AddNewEventPage {
 
   item: ItemModel = {
-    // id: 0,
     title: '',
     description: '',
     period: '',

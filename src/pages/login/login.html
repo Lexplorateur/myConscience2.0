@@ -14,8 +14,8 @@
         <ion-col>
           <ion-list inset class="no-border">
             <ion-item>
-              <ion-label>Pseudo</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-label>Email</ion-label>
+              <ion-input type="email"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label>Mot de passe</ion-label>
@@ -26,7 +26,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <button ion-button class="login-button green" (click)="login()" navPush="DashboardPage">Login</button>
+          <button ion-button class="login-button green" (click)="login()">Login</button>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -39,7 +39,7 @@
     </div>
     <ion-row>
       <ion-col>
-        <button ion-button class="login-button blue" (click)="goToSignup()">Créer un compte</button>
+        <button ion-button class="login-button blue" navPush="RegisterPage">Créer un compte</button>
       </ion-col>
     </ion-row>
   </div>

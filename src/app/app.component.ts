@@ -30,7 +30,7 @@ export class MyApp {
     //   this.rootPage = LoginPage;
     // }
 
-    this.rootPage = 'DashboardPage';
+    this.rootPage = 'HomePage';
 
   }
 

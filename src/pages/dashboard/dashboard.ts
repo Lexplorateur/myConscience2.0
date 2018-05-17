@@ -34,28 +34,7 @@ export class DashboardPage {
     console.log('ionViewDidLoad DashboardPage');
   }
 
-  getColorBorder(theme) {
-    switch (theme) {
-      case 'sport':
-        return '5px solid yellow';
-      case 'job':
-        return '5px solid blueviolet';
-      case 'leasure':
-        return '5px solid coral';
-      case 'household':
-        return '5px solid darkslateblue';
-      case 'health':
-        return '5px solid limegreen';
-      case 'learning':
-        return '5px solid palevioletred';
-      case 'altruism':
-        return '5px solid dodgerblue';
-      case 'other':
-        return '5px solid grey';
-    }
-  }
-
-  getPoints(theme) {
+  getColorBorder(theme): string {
     switch (theme) {
       case 'sport':
         return '5px solid yellow';

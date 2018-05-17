@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AlertController, App, LoadingController, IonicPage, NavController} from 'ionic-angular';
+import { UserModel } from '../../models/user/user'
 
 @IonicPage()
 @Component({
@@ -8,7 +9,10 @@ import {AlertController, App, LoadingController, IonicPage, NavController} from 
 })
 export class LoginPage {
 
-  public loginForm: any;
+  user: UserModel = {
+    email: '',
+    password: ''
+  };
 
   constructor(
     public navCtrl: NavController,
@@ -37,11 +41,6 @@ export class LoginPage {
 
     loading.present();
 
-  }
-
-  goToSignup() {
-    // this.navCtrl.push(SignupPage);
-    this.navCtrl.setRoot('DashboardPage');
   }
 
   goToResetPassword() {

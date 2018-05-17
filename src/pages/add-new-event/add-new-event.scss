@@ -9,6 +9,18 @@ page-add-new-event {
     border-color: transparent;
   }
 
+  .add-nav * {
+    color: $grey;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+
+    span {
+      color: $orange;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+
   ion-list-header {
     margin-bottom: 0px !important;
     margin-top: 20px !important;
@@ -44,17 +56,6 @@ page-add-new-event {
     }
   }
 
-  .add-nav * {
-    color: $grey;
-    font-size: 1.7rem;
-    text-transform: uppercase;
-
-    span {
-      color: $orange;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-  }
 
   .card-form-add {
     margin: 60px auto;
@@ -67,29 +68,48 @@ page-add-new-event {
     }
 
     .theme-choose {
-      .sport {
-        border-bottom: 3px solid yellow;
+      ion-item {
+        max-height: 32px !important;
       }
-      .job {
-        border-bottom: 3px solid blueviolet;
+
+      .sport ion-label,
+      .job ion-label,
+      .learning ion-label,
+      .leisure ion-label,
+      .health ion-label,
+      .household ion-label,
+      .other ion-label,
+      .altruism ion-label {
+        border-radius: 5px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
       }
-      .leisure {
-        border-bottom: 3px solid coral;
+
+      .sport ion-label {
+        border-left: 3px solid yellow;
       }
-      .household {
-        border-bottom: 3px solid darkslateblue;
+      .job ion-label {
+        border-left: 3px solid blueviolet;
       }
-      .health {
-        border-bottom: 3px solid limegreen;
+      .leisure ion-label {
+        border-left: 3px solid coral;
       }
-      .learning {
-        border-bottom: 3px solid palevioletred;
+      .household ion-label {
+        border-left: 3px solid darkslateblue;
       }
-      .altruism {
-        border-bottom: 3px solid dodgerblue;
+      .health ion-label {
+        border-left: 3px solid limegreen;
       }
-      .other {
-        border-bottom: 3px solid grey;
+      .learning ion-label {
+        border-left: 3px solid palevioletred;
+      }
+      .altruism ion-label {
+        border-left: 3px solid dodgerblue;
+      }
+      .other ion-label {
+        border-left: 3px solid grey;
       }
     }
 
