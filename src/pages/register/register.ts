@@ -33,6 +33,7 @@ export class RegisterPage {
 
   async goToSignup(user: UserModel) {
     try {
+      let controle = true;
       const result = await this.afAuth.auth
         .createUserWithEmailAndPassword(user.email, user.password)
         .catch(function(error) {
@@ -48,8 +49,12 @@ export class RegisterPage {
             alert(errorMessage);
           }
           console.log(error);
+          controle = false;
         });
-      this.navCtrl.pop({})
+      if (controle) {
+        this.navCtrl.pop({});
+      }
+
     }
     catch (e) {
       console.error(e)

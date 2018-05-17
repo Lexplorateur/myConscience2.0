@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AlertController, App, LoadingController, IonicPage, NavController} from 'ionic-angular';
+import {AlertController, App, LoadingController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { UserModel } from '../../models/user/user'
 
 @IonicPage()
@@ -14,12 +14,18 @@ export class LoginPage {
     password: ''
   };
 
+  // registerEmail: string = '';
+  // registerPassword: string = '';
+
   constructor(
     public navCtrl: NavController,
+    public navParam: NavParams,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public app: App
-  ) { }
+  ) {
+
+  }
 
   login():void {
     const loading = this.loadingCtrl.create({
@@ -38,9 +44,7 @@ export class LoginPage {
       //   this.nav.setRoot(AllEventPage);
       // }
     });
-
     loading.present();
-
   }
 
   goToResetPassword() {
