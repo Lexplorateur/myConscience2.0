@@ -18,18 +18,18 @@
         <ion-list inset class="no-border">
           <ion-item>
             <ion-label stacked>Email</ion-label>
-            <ion-input id="email-register" type="email" [(ngModel)]="user.email" minlength="6" placeholder="Entre un email"></ion-input>
+            <ion-input id="email-register" type="email" [(ngModel)]="userRegister.email" minlength="6" placeholder="Entre un email"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label stacked>Mot de passe</ion-label>
-            <ion-input type="password" minlength="6" [(ngModel)]="user.password" placeholder="6 caractères minimum"></ion-input>
+            <ion-input id="pass-register" type="password" minlength="6" [(ngModel)]="userRegister.password" placeholder="6 caractères minimum"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <button ion-button class="login-button green" (click)="goToSignup(user)">Je m'inscris</button>
+        <button ion-button class="login-button green" (click)="goToSignup(userRegister)">Je m'inscris</button>
       </ion-col>
     </ion-row>
   </div>

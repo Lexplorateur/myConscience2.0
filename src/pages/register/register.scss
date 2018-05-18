@@ -62,7 +62,8 @@ page-register {
     margin-bottom: 10px;
   }
 
-  .p-error {
+  .pass-error,
+  .email-error {
     color: red;
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AlertController, App, LoadingController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { UserModel } from '../../models/user/user'
+import set = Reflect.set;
 
 @IonicPage()
 @Component({
@@ -14,8 +15,8 @@ export class LoginPage {
     password: ''
   };
 
-  // registerEmail: string = '';
-  // registerPassword: string = '';
+  emailRegister: string;
+  passRegister: string;
 
   constructor(
     public navCtrl: NavController,
@@ -24,8 +25,10 @@ export class LoginPage {
     public alertCtrl: AlertController,
     public app: App
   ) {
-
+      this.emailRegister = navParam.get('emailRegister');
+      this.passRegister = navParam.get('passRegister');
   }
+
 
   login():void {
     const loading = this.loadingCtrl.create({
