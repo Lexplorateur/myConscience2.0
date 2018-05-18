@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {AlertController, App, LoadingController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { UserModel } from '../../models/user/user'
-import set = Reflect.set;
+import { AngularFireAuth } from 'angularfire2/auth'
+import * as $ from "jquery";
 
 @IonicPage()
 @Component({
@@ -21,8 +22,7 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParam: NavParams,
-    public loadingCtrl: LoadingController,
-    public alertCtrl: AlertController,
+    public afAuth: AngularFireAuth,
     public app: App
   ) {
       this.emailRegister = navParam.get('emailRegister');
@@ -30,24 +30,33 @@ export class LoginPage {
   }
 
 
-  login():void {
-    const loading = this.loadingCtrl.create({
-      duration: 500
-    });
+  async login(user: UserModel):void {
+    try {
+      let controle = true;
+      await this.afAuth.auth
+        .signInWithEmailAndPassword(user.email, user.password)
+        .catch(function(error) {
+          // Handle Errors here.
+          let errorCode = error.code;
+          let emailLoginId = document.getElementById('email-login');
+          let messEmailInvalid = '<p class="email-error">EMAIL OU MOT DE PASSE INVALIDE</p>';
+          let borderError = 'border-bottom: 3px solid red';
+          if (errorCode === 'auth/invalid-email') {
+            $('.email-error').remove();
+            emailLoginId.insertAdjacentHTML('afterbegin', messEmailInvalid);
+            emailLoginId.setAttribute('style', borderError);
+          }
+          console.log(error);
+          controle = false;
+        });
+      if (controle) {
+        this.navCtrl.setRoot('DashboardPage');
+      }
 
-    loading.onDidDismiss(() => {
-      const alert = this.alertCtrl.create({
-        title: 'Invalide',
-        subTitle: 'Veuillez rentrer un Pseudo et un mot de passe valide',
-        buttons: ['OK']
-      });
-      alert.present();
-
-      // if (this.user.isValid()) {
-      //   this.nav.setRoot(AllEventPage);
-      // }
-    });
-    loading.present();
+    }
+    catch (e) {
+      console.error(e)
+    }
   }
 
   goToResetPassword() {
