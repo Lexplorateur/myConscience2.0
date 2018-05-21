@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {AlertController, App, LoadingController, IonicPage, NavController, NavParams} from 'ionic-angular';
-import { UserModel } from '../../models/user/user'
+import {App, IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import { LoginModel } from '../../models/user/login'
 import { AngularFireAuth } from 'angularfire2/auth'
 import * as $ from "jquery";
 
@@ -11,7 +11,8 @@ import * as $ from "jquery";
 })
 export class LoginPage {
 
-  user: UserModel = {
+
+  user: LoginModel = {
     email: '',
     password: ''
   };
@@ -22,18 +23,24 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParam: NavParams,
+    public loadingCtrl: LoadingController,
     public afAuth: AngularFireAuth,
     public app: App
   ) {
-      this.emailRegister = navParam.get('emailRegister');
-      this.passRegister = navParam.get('passRegister');
+
   }
 
 
-  async login(user: UserModel):void {
+  async login(user: LoginModel) {
+    let loading = this.loadingCtrl.create({
+      spinner: 'dots',
+      content: 'Mise en phase...',
+      duration: 3000
+    });
+
     try {
       let controle = true;
-      await this.afAuth.auth
+      this.afAuth.auth
         .signInWithEmailAndPassword(user.email, user.password)
         .catch(function(error) {
           // Handle Errors here.
@@ -50,7 +57,10 @@ export class LoginPage {
           controle = false;
         });
       if (controle) {
-        this.navCtrl.setRoot('DashboardPage');
+        loading.onDidDismiss(() => {
+          this.navCtrl.setRoot('DashboardPage');
+        });
+        loading.present();
       }
 
     }

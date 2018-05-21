@@ -15,21 +15,45 @@
   <div class="main-register">
     <ion-row>
       <ion-col>
-        <ion-list inset class="no-border">
+        <form [formGroup]="formRegister" (submit)="goToSignup(userRegister)" inset class="no-border">
           <ion-item>
-            <ion-label stacked>Email</ion-label>
-            <ion-input id="email-register" type="email" [(ngModel)]="userRegister.email" minlength="6" placeholder="Entre un email"></ion-input>
+            <p class="text-title">Bien, il va falloir nous mettre en <br/> phase. Pour cela, remplis ce <br/> formulaire entièrement.</p>
           </ion-item>
           <ion-item>
-            <ion-label stacked>Mot de passe</ion-label>
-            <ion-input id="pass-register" type="password" minlength="6" [(ngModel)]="userRegister.password" placeholder="6 caractères minimum"></ion-input>
+            <ion-label id="username" stacked>Comment veux-tu que je <br/>t'appelle ?</ion-label>
+            <ion-input [(ngModel)]="userRegister.username" formControlName="username" type="text" placeholder="pseudonyme"></ion-input>
           </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <button ion-button class="login-button green" (click)="goToSignup(userRegister)">Je m'inscris</button>
+          <ion-item>
+            <ion-label stacked>Ton nom</ion-label>
+            <ion-input [(ngModel)]="userRegister.firstname" formControlName="firstname" type="text" placeholder="nom"></ion-input>
+          </ion-item>
+          <!--<p *ngIf="!isValid('firstname')" color="redM" padding-left>Tu as bien un Nom...</p>-->
+          <ion-item>
+            <ion-label stacked>Ton prénom</ion-label>
+            <ion-input [(ngModel)]="userRegister.lastname" formControlName="lastname" type="text" placeholder="prénom"></ion-input>
+          </ion-item>
+          <!--<p *ngIf="!isValid('lastname')" color="redM" padding-left>Tu as bien un Prénom...</p>-->
+          <ion-item>
+            <ion-label stacked>Ta date de naissance</ion-label>
+            <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="userRegister.birthDate" formControlName="birthDate" placeholder="date"></ion-datetime>
+          </ion-item>
+          <!--<p *ngIf="!isValid('birthDate')" color="redM" padding-left>Tu n'es jamais né(e) ?</p>-->
+          <ion-item>
+            <ion-label stacked>Un email</ion-label>
+            <ion-input id="email-register" [(ngModel)]="userRegister.email" formControlName="email" type="email" placeholder="email"></ion-input>
+          </ion-item>
+          <!--<p *ngIf="!isValid('email')" color="redM" padding-left>Obligatoire pour la connexion</p>-->
+          <ion-item>
+            <ion-label stacked>Un mot de passe</ion-label>
+            <ion-input [(ngModel)]="userRegister.password" formControlName="password" type="password" minlength="6" placeholder="6 caractères minimum"></ion-input>
+          </ion-item>
+          <!--<p *ngIf="!isValid('password')" color="redM" padding-left>Protège nous s'il te plaît</p>-->
+          <ion-row>
+            <ion-col>
+              <button ion-button class="register-button green" [disabled]="!formRegister.valid">Se mettre en phase</button>
+            </ion-col>
+          </ion-row>
+        </form>
       </ion-col>
     </ion-row>
   </div>
